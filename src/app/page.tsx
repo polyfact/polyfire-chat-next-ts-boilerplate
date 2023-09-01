@@ -1,91 +1,62 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+"use client";
+import ChatUI from "@polyfact/chat";
+import { usePolyfact, type Chat } from "polyfact";
 
-const inter = Inter({ subsets: ['latin'] })
+import { useState, useEffect } from "react";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { Loader } from "@/components/Loader";
 
-export default function Home() {
+import config from "@/config";
+
+function App() {
+  const { polyfact, login, loading } = usePolyfact({
+    project: "7b29de50-8ce4-4449-8382-115eee716f76", // create your own project at https://app.polyfact.com
+  });
+  const [chat, setChat] = useState<Chat>();
+
+  useEffect(() => {
+    if (polyfact) {
+      setChat(
+        new polyfact.Chat({
+          systemPromptId:
+            // Here a few prompt id to test (create your own with the Polyfact sdk or just use the prop systemPrompt)
+            // chucky prompt : cb93e8e4-23fe-4a9d-b2b2-0b910d438509
+            // virtual soft girlfriend prompt : 49735ec7-6c20-4ceb-9741-3de1db4fe6cd
+            // midjourney prompt : f4a1f732-9c38-4bdb-b9e4-3baa7971286a
+            // Holy bible prompt : 8fc39ca4-3941-40d9-824a-5ed283102f6e
+            config.chat.promptId || "cb93e8e4-23fe-4a9d-b2b2-0b910d438509",
+          autoMemory: true,
+        })
+      );
+    }
+  }, [polyfact]);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div
+      className="app-container"
+      style={{ backgroundColor: config.chat.botMessageBackgroundColor }}
+    >
+      <Header title={config.chat.botName} {...config.header} />
+      <div className="content">
+        {login ? (
+          <button
+            onClick={() => login({ provider: "github" })}
+            className="login-btn"
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+            Login with Github
+          </button>
+        ) : chat ? (
+          <div className="chat-container">
+            <ChatUI chat={chat} {...config.chat} />
+          </div>
+        ) : (
+          <Loader />
+        )}
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      <Footer name={config.chat.botName} {...config.footer} />
+    </div>
+  );
 }
+
+export default App;
