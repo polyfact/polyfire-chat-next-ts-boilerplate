@@ -24,6 +24,7 @@ function App() {
       <div className="content">
         {isBrowser ? (
           <PolyfactProvider project="chat_07b29de">
+            {/* TODO: Replace with your project ID */}
             <ChatWrapper />
           </PolyfactProvider>
         ) : (
