@@ -1,6 +1,6 @@
-# 🤖 polyfact-chat-nextjs-boilerplate
+# 🤖 polyfire-chat-nextjs-boilerplate
 
-Jumpstart your chat experience using the Polyfact SDK, powered by Next.js and styled using styled-components! TypeScript brings type safety to your Next.js project.
+Jumpstart your chat experience with the Polyfire SDK, elegantly integrated into a Next.js project and beautifully styled using styled-components! Enjoy the robustness of TypeScript in your Next.js development.
 
 ## 📌 Table of Contents
 
@@ -8,8 +8,8 @@ Jumpstart your chat experience using the Polyfact SDK, powered by Next.js and st
 - [🔧 Prerequisites](#-prerequisites)
 - [🚀 Installation](#-installation)
 - [🖥 Usage](#-usage)
-- [⚙ Configuration](#-configuration)
-- [💬 Using polyfact-cli](#-using-polyfact-cli)
+- [🎨 Color Picker for Development](#-color-picker-for-development)
+- [💬 Using polyfire-cli](#-using-polyfire-cli)
 - [🔑 Scripts](#-scripts)
 - [📚 Dependencies](#-dependencies)
 - [🥞 Stack](#-stack)
@@ -18,10 +18,9 @@ Jumpstart your chat experience using the Polyfact SDK, powered by Next.js and st
 
 ## 🌟 Features
 
-- Fully customizable chat UI with styled components.
-- Seamless integration with Polyfact SDK for chat functionalities.
-- Pre-configured themes for chat, header, and footer.
-- Easy to adapt and extend within the Next.js framework.
+- Seamless integration with the Polyfire SDK to empower chat functionalities.
+- Pre-defined themes for chat, header, and footer, easily adjustable.
+- Built with the flexible and efficient Next.js framework.
 
 ## 🔧 Prerequisites
 
@@ -31,61 +30,60 @@ Jumpstart your chat experience using the Polyfact SDK, powered by Next.js and st
 ## 🚀 Installation
 
 1️⃣. Clone the repository:
+
 ```bash
-git clone https://github.com/kevin-btc/polyfact-chat-nextjs-boilerplate.git
+git clone https://github.com/kevin-btc/polyfire-chat-nextjs-boilerplate.git
 ```
 
 2️⃣. Navigate to the project directory:
+
 ```bash
-cd polyfact-chat-nextjs-boilerplate
+cd polyfire-chat-nextjs-boilerplate
 ```
 
-3️⃣. Install the magic (dependencies):
+3️⃣. Install dependencies:
+
 ```bash
 npm install
 ```
 
 ## 🖥 Usage
 
-1️⃣. Fire up the development server:
+1️⃣. Start the development server:
+
 ```bash
 npm run dev
 ```
 
-2️⃣. Visit `http://localhost:3000` to see your chat bot in action!
+2️⃣. Open `http://localhost:3000` to interact with your chatbot!
 
-## ⚙ Configuration
+## 🎨 Color Picker for Development
 
-All configurations can be tinkered with in `src/config.ts`. Adjust colors, name your bot, choose logos, and more.
+In the development environment, a color picker tool is available to customize the chat UI's color scheme. This intuitive tool allows developers to experiment with different colors in real-time. Once you have chosen the desired colors, simply click the "Copy Config Color" button. This will copy the configuration to your clipboard. Then, replace the default color configuration in `src/app/page.tsx` with your new color scheme.
 
-### 🛠 Polyfact Configuration
+## 💬 Using polyfire-cli
 
-1. Register a project at [Polyfact](https://app.polyfact.com).
-2. Replace the project ID in `pages/_app.tsx`.
-3. Select or provide system prompt IDs.
+For a guided setup, use the `polyfire-cli`:
 
-## 💬 Using polyfact-cli
+1️⃣. Launch the CLI:
 
-Want guided setup? Use the `polyfact-cli`:
-
-1️⃣. Summon the CLI:
 ```bash
-npx polyfact
+npx polyfire-js
 ```
 
-2️⃣. Pick "chat".
-3️⃣. Follow the breadcrumbs (on-screen instructions).
+2️⃣. Choose "chat".
+3️⃣. Follow the prompts for an easy setup.
 
 ## 🔑 Scripts
 
-- `npm run dev`: Local development.
-- `npm run build`: Prep for production.
-- `npm run preview`: Peek at the production build.
+- `npm run dev`: Start a local development server.
+- `npm run build`: Prepare your project for production.
+- `npm run preview`: View the production build.
 
 ## 📚 Dependencies
 
 - Core: `next`, `react`, `react-dom`
-- Chat: `@polyfact/chat`, `polyfact`
+- Chat: `@polyfire/chat`, `polyfire`
 - Icons: `phosphor-react`
 - Dialog: `@radix-ui/react-dialog`
 - Types: `typescript`
@@ -94,16 +92,15 @@ npx polyfact
 
 - Next.js
 - TypeScript
-- styled-components
 
 ## ✨ Contributing
 
-Have ideas? 🤔 Found a bug? 🐞 Join us! Check out the [issues](https://github.com/kevin-btc/polyfact-chat-nextjs-boilerplate/issues).
+Got ideas? 🤔 Found a bug? 🐞 Join our community! Visit [issues](https://github.com/polyfire-ai/polyfire-chat-nextjs-boilerplate/issues) to get started.
 
 ## 📜 License
 
-This project is under the MIT License. Check out `LICENSE` for details.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ---
 
-If this lights up your day, give us a ⭐ on GitHub!
+Enjoy using polyfire-chat-nextjs-boilerplate? Give us a ⭐ on GitHub!
