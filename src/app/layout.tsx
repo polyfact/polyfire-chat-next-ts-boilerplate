@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 
 import "./globals.css";
 
-const BOT_NAME = process.env.NEXT_PUBLIC_CHATBOT_NAME || "Chatbot";
+const BOT_NAME = process.env.NEXT_PUBLIC_POLYFIRE_BOTNAME || "Chatbot";
 
 export default function RootLayout({
   children,
