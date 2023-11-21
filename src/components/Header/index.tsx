@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 interface HeaderProps {
   title: string;
@@ -7,13 +8,13 @@ interface HeaderProps {
   textColor?: string;
 }
 
-const StyledHeader = styled.header<Omit<HeaderProps, "title">>`
+const StyledHeader = styled.header<{ $bgColor?: string; $textColor?: string }>`
   display: flex;
   height: 80px;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) => props.bgColor || "#1a1a2e"};
-  color: ${(props) => props.textColor || "#e94560"};
+  background-color: ${(props) => props.$bgColor || "#1a1a2e"};
+  color: ${(props) => props.$textColor || "#e94560"};
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 `;
 
@@ -51,10 +52,10 @@ export function Header({
   logo = "./logo.svg",
 }: HeaderProps) {
   return (
-    <StyledHeader bgColor={bgColor} textColor={textColor}>
+    <StyledHeader $bgColor={bgColor} $textColor={textColor}>
       <HeaderContainer>
         <LogoContainer>
-          <img src={logo} alt={`Logo of ${title}`} />
+          <Image src={logo} alt={`Logo of ${title}`} width={30} height={30} />
           <h1>{title}</h1>
         </LogoContainer>
       </HeaderContainer>

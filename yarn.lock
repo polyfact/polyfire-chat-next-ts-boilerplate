@@ -1292,11 +1292,6 @@
   dependencies:
     glob "7.1.7"
 
-"@next/font@13.4.19":
-  version "13.4.19"
-  resolved "https://registry.yarnpkg.com/@next/font/-/font-13.4.19.tgz#2b69aee760a3bbabf54873f80ae6d4b09b35d133"
-  integrity sha512-yOuSRYfqksWcaG/sATr1/DEGvvI8gnmAAnQCCZ0+L9p4Pio3/DMu71J56YHh9Hz84LDN4tMVzuux0ssCuM50sA==
-
 "@next/swc-darwin-arm64@13.4.19":
   version "13.4.19"
   resolved "https://registry.yarnpkg.com/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.4.19.tgz#77ad462b5ced4efdc26cb5a0053968d2c7dac1b6"
@@ -6520,6 +6515,26 @@ polyfire-js@^0.2.12:
   version "0.2.12"
   resolved "https://registry.yarnpkg.com/polyfire-js/-/polyfire-js-0.2.12.tgz#0ee50270c4d162a5f06bc925ab64250d737646d5"
   integrity sha512-vk1qMhmlI0RyrjbBvbjL+oJ4TjC4v9gvNKGSCO/oHrkiCMosa5WF9dmo5b0K8UsEA3+8XtpGEEEfZ/Iy2RBqkQ==
+  dependencies:
+    "@supabase/supabase-js" "^2.31.0"
+    async-mutex "^0.4.0"
+    axios "^0.27.2"
+    buffer "^6.0.3"
+    fp-ts "^2.16.0"
+    inquirer "^9.2.10"
+    isomorphic-ws "^5.0.0"
+    js-tiktoken "^1.0.7"
+    polyfact-io-ts "^2.2.20"
+    process "^0.11.10"
+    react "^18.2.0"
+    readable-stream "^4.4.2"
+    uuid "^9.0.0"
+    ws "^8.13.0"
+
+polyfire-js@^0.2.19:
+  version "0.2.19"
+  resolved "https://registry.yarnpkg.com/polyfire-js/-/polyfire-js-0.2.19.tgz#539e7198eebbb49eaae11b05ccade8f9e5314577"
+  integrity sha512-pYtCW5db3DFvXw4xS2o9KkL7hL8b1sH6pEpvEYKR0Ui4rJQ6lfanYcOn8L/9fODcC3QcM5Dq6qdTaiNJvCkGVw==
   dependencies:
     "@supabase/supabase-js" "^2.31.0"
     async-mutex "^0.4.0"
